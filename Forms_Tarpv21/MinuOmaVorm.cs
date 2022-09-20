@@ -79,6 +79,18 @@ namespace Forms_Tarpv21
 
             };
 
+            riba = new ProgressBar
+            {
+                Width = 400,
+                Height = 30,
+                Location = new Point(350, 500),
+                Value = 100,
+                Minimum = 0,
+                Maximum = 100,
+                Step = 1,
+                //Dock = DockStyle.Bottom
+            };
+
             if (e.Node.Text == "Nupp-Button")
             {
                 nupp = new Button();
@@ -207,7 +219,7 @@ namespace Forms_Tarpv21
                     Width = 400,
                     Height = 30,
                     Location = new Point(350, 500),
-                    Value = 1,
+                    Value = 100,
                     Minimum = 0,
                     Maximum = 100,
                     Step = 1,
@@ -227,6 +239,11 @@ namespace Forms_Tarpv21
         private void Aeg_Tick(object sender, EventArgs e)
         {
             riba.PerformStep();
+            if (riba.Value==100)
+            {
+                MessageBox.Show("See on kõik");
+                this.Close();
+            }
         }
 
         int x = 350;
@@ -279,6 +296,11 @@ namespace Forms_Tarpv21
             {
                 MessageBox.Show("Esimene == false, Teine == false", "Aken");
             }
+        }
+
+        private void MinuOmaVorm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Silt_MouseLeave(object sender, EventArgs e)
