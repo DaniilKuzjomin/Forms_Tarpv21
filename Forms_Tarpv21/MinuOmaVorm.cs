@@ -20,6 +20,7 @@ namespace Forms_Tarpv21
         PictureBox pilt;
         ProgressBar riba;
         Timer aeg;
+        TextBox tekst;
 
 
         public MinuOmaVorm()
@@ -38,6 +39,9 @@ namespace Forms_Tarpv21
             oksad.Nodes.Add(new TreeNode("Märkeruut-Checkbox"));
             oksad.Nodes.Add(new TreeNode("Radionupp-Radiobutton"));
             oksad.Nodes.Add(new TreeNode("Edemisriba-ProgressBar"));
+
+            oksad.Nodes.Add(new TreeNode("Tekstkast-TextBox"));
+            oksad.Nodes.Add(new TreeNode("OmaVorm-MyForm"));
 
 
 
@@ -225,15 +229,47 @@ namespace Forms_Tarpv21
                     Step = 1,
                     //Dock = DockStyle.Bottom
                 };
+                aeg = new Timer();
+                aeg.Enabled = true;
+                aeg.Tick += Aeg_Tick;
+                this.Controls.Add(riba);
 
-                
 
-            };
-            aeg = new Timer();
-            aeg.Enabled = true;
-            aeg.Tick += Aeg_Tick;
-            this.Controls.Add(riba);
+            }
+            else if (e.Node.Text== "Tekstkast-TextBox")
+            {
+                TextBox tekst = new TextBox
+                {
+                    Font = new Font("Arial", 34, FontStyle.Italic),
+                    Location = new Point(350, 400),
+                    Enabled = true
 
+                };
+                tekst.DoubleClick += Tekst_DoubleClick;
+                this.Controls.Add(tekst);
+            }
+            else if (e.Node.Text == "OmaVorm-MyForm")
+            {
+                Omavorm oma = new Omavorm("Kuulame muusikat", "Vajuta siia", "Faili nimi");
+                oma.ShowDialog();
+
+
+            }
+            
+
+        }
+        bool t=false;
+
+        private void Tekst_DoubleClick(object sender, EventArgs e)
+        {
+            if (t=true)
+            {
+                //tekst.Enabled = false;
+            }
+            else
+            {
+                tekst.Enabled=true;
+            }
         }
 
         private void Aeg_Tick(object sender, EventArgs e)
