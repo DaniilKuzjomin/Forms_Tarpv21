@@ -60,6 +60,9 @@
     <EmbeddedResource Include="MinuOmaVorm.resx">
       <DependentUpon>MinuOmaVorm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Omavorm.resx">
+      <DependentUpon>Omavorm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

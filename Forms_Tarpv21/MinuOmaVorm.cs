@@ -250,10 +250,8 @@ namespace Forms_Tarpv21
             }
             else if (e.Node.Text == "OmaVorm-MyForm")
             {
-                Omavorm oma = new Omavorm("Kuulame muusikat", "Vajuta siia", "Faili nimi");
+                Omavorm oma = new Omavorm("Kuulame muusikat", "Vajuta siia", "Drillhoven - Fur elise drill remix");
                 oma.ShowDialog();
-
-
             }
             
 
